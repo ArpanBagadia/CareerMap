@@ -1,5 +1,5 @@
 import LoginAdmin from "./admin/login/Login";
-import CompanyLogin from "./company/Login"
+import CompanyLogin from "./company/CompanyLogin"
 import Home from "./user/home/Home";
 // import Add_Company from "./admin/company/Add_Company";
 // import Add_Question from "./admin/question/Add_Question"
@@ -14,7 +14,7 @@ import Register from "./user/login/Register";
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/admin/login" element={<LoginAdmin />} />
-          <Route path="/campany/login" element={<CompanyLogin />} />
+          <Route path="/company/login" element={<CompanyLogin />} />
           {/* <Route path="/" element={<Login />} />
           
           <Route path="/login/admin" element={<LoginAdmin />} />

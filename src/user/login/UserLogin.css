@@ -1,0 +1,87 @@
+/* Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* Navigation Bar */
+.navbar1 {
+  background: #14b8a6;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 36px;
+  width: auto;
+}
+
+.navbar-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 1rem;
+  margin-top: 60px; /* Offset for the navbar */
+}
+
+.form-container {
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Box */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-header1 {
+  color: #003d3d;
+}
+
+.form-button1 {
+  background-color: #14b8a6;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.form-button1:hover {
+  background-color: #003d3d;
+}
+
+.forgot-password1 {
+  margin-top: 0.75rem;
+  color: #003d3d;
+  font-size: 0.9rem;
+  text-align: center;
+}

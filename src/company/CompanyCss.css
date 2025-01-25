@@ -1,0 +1,124 @@
+/* Global Container */
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation Bar */
+.navbar1 {
+  background: #14B8A6;
+  width: 100%;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Form Section */
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 100px;
+  /* Offset for the fixed navbar */
+}
+
+.form-container {
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+}
+
+/* Form Header */
+.form-header1 {
+  color: #003d3d;
+
+}
+
+/* Form Box */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-input {
+  border-radius: 8px;
+  border-color: #14B8A6;
+}
+
+.form-input .MuiOutlinedInput-root {
+  border-radius: 8px;
+}
+
+.form-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #14B8A6 !important;
+
+  /* Optional shadow */
+}
+
+.form-input .MuiInputLabel-root.Mui-focused {
+  color: #14B8A6 !important;
+}
+
+/* Button */
+.form-button1 {
+  background-color: #14B8A6;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: background 0.3s;
+}
+
+.form-button1:hover {
+  background-color: #003d3d;
+}
+
+/* Forgot Password Link */
+.forgot-password1 {
+  margin-top: 1rem;
+  color: #14B8A6;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.forgot-password1:hover {
+  color: #003d3d;
+}
