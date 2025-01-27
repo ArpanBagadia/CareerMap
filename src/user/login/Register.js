@@ -1,146 +1,3 @@
-// import React from 'react';
-// import { Box, Button, TextField, Typography, Container, Grid } from '@mui/material';
-// import { useNavigate } from 'react-router-dom';
-
-// const Register = () => {
-//   const navigate = useNavigate();
-
-//   const handleRegister = (event) => {
-//     event.preventDefault();
-//     navigate('/'); 
-//   };
-
-//   return (
-//     <Container maxWidth="xs">
-//       <Box
-//         sx={{
-//           marginTop: 8,
-//           display: 'flex',
-//           flexDirection: 'column',
-//           alignItems: 'center',
-//         }}
-//       >
-//         <Typography component="h1" variant="h5" color="rgb(22 163 74)">
-//           <b>CareerMap Register</b>
-//         </Typography>
-//         <Box component="form" onSubmit={handleRegister} noValidate sx={{ mt: 3 }}>
-//           <Grid container spacing={2}>
-//             <Grid item xs={12} sm={6}>
-//               <TextField
-//                 autoComplete="fname"
-//                 name="firstName"
-//                 required
-//                 fullWidth
-//                 id="firstName"
-//                 label="First Name"
-//                 color="black"
-//                 autoFocus
-//               />
-//             </Grid>
-//             <Grid item xs={12} sm={6}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="lastName"
-//                 label="Last Name"
-//                 name="lastName"
-//                 autoComplete="lname"
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="email"
-//                 label="Email Address"
-//                 name="email"
-//                 autoComplete="email"
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 name="password"
-//                 label="Password"
-//                 type="password"
-//                 id="password"
-//                 autoComplete="new-password"
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="dateOfBirth"
-//                 label="Date of Birth"
-//                 name="dateOfBirth"
-//                 type="date"
-//                 InputLabelProps={{ shrink: true }}
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="gender"
-//                 label="Gender"
-//                 name="gender"
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="contactNumber"
-//                 label="Contact Number"
-//                 name="contactNumber"
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="educationalQualification"
-//                 label="Educational Qualification"
-//                 name="educationalQualification"
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="fieldOfInterest"
-//                 label="Field of Interest"
-//                 name="fieldOfInterest"
-//               />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField
-//                 required
-//                 fullWidth
-//                 id="skills"
-//                 label="Skills"
-//                 name="skills"
-//               />
-//             </Grid>
-//           </Grid>
-//           <Button
-//             type="submit"
-//             fullWidth
-//             variant="contained"
-//             sx={{ mt: 3, mb: 2, backgroundColor: 'rgb(22 163 74)', color: 'white' }}
-//           >
-//             Register
-//           </Button>
-//         </Box>
-//       </Box>
-//     </Container>
-//   );
-// };
-
-// export default Register;
-
 import React, { useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Grid } from "@mui/material";
@@ -156,7 +13,17 @@ import {
 import "./UserLogin.css";
 
 export default function Register() {
-  const [data, setData] = useState({ email: "", password: "" });
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    dateOfBirth: "",
+    gender: "",
+    contactNumber: "",
+    skills: "",
+    fieldOfInterest: "",
+  });
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -164,7 +31,28 @@ export default function Register() {
 
   const handleSubmit = () => {
     console.log(data);
-    setData({ email: "", password: "" });
+    setData({
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      dateOfBirth: "",
+      gender: "",
+      contactNumber: "",
+      skills: "",
+      fieldOfInterest: "",
+    });
+  };
+
+  const textFieldStyles = {
+    "& .MuiOutlinedInput-root": {
+      "&.Mui-focused fieldset": {
+        borderColor: "#14B8A6", // Change border color on focus
+      },
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
+      color: "#14B8A6", // Change label color on focus
+    },
   };
 
   return (
@@ -174,7 +62,7 @@ export default function Register() {
         <div className="navbar-content">
           <div className="navbar-brand">
             <img src={CompanyLogo} alt="Company Logo" className="navbar-logo" />
-            <span className="navbar-title">User Register</span>
+            <span className="navbar-title">CareerMap</span>
           </div>
         </div>
       </Disclosure>
@@ -200,6 +88,9 @@ export default function Register() {
                   label="First Name"
                   autoFocus
                   required
+                  sx={textFieldStyles}
+                  value={data.firstName}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -209,6 +100,9 @@ export default function Register() {
                   id="lastName"
                   label="Last Name"
                   required
+                  sx={textFieldStyles}
+                  value={data.lastName}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -218,16 +112,21 @@ export default function Register() {
                   label="Email Address"
                   name="email"
                   required
+                  sx={textFieldStyles}
+                  value={data.email}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  fullWidth
-                  name="password"
                   label="Password"
                   type="password"
-                  id="password"
-                  required
+                  name="password"
+                  variant="outlined"
+                  fullWidth
+                  sx={textFieldStyles}
+                  value={data.password}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -239,6 +138,9 @@ export default function Register() {
                   type="date"
                   InputLabelProps={{ shrink: true }}
                   required
+                  sx={textFieldStyles}
+                  value={data.dateOfBirth}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -248,6 +150,9 @@ export default function Register() {
                   label="Gender"
                   name="gender"
                   required
+                  sx={textFieldStyles}
+                  value={data.gender}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -257,6 +162,9 @@ export default function Register() {
                   label="Contact Number"
                   name="contactNumber"
                   required
+                  sx={textFieldStyles}
+                  value={data.contactNumber}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -266,6 +174,9 @@ export default function Register() {
                   label="Skills"
                   name="skills"
                   required
+                  sx={textFieldStyles}
+                  value={data.skills}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -275,26 +186,49 @@ export default function Register() {
                   label="Field of Interest"
                   name="fieldOfInterest"
                   required
+                  sx={textFieldStyles}
+                  value={data.fieldOfInterest}
+                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
             <Button
               onClick={handleSubmit}
               variant="contained"
-              className="form-button1"
+              sx={{
+                color: "white",
+                fontWeight: "bold",
+                padding: "0.75rem",
+                marginTop: "1rem",
+                borderRadius: "8px",
+                backgroundColor: "#14b8a6",
+                "&:hover": {
+                  backgroundColor: "#003d3d", // Darker teal on hover
+                },
+              }}
               fullWidth
             >
               Register
             </Button>
-            <Typography className="forgot-password1">
+            <div
+              style={{
+                marginTop: "0.3rem",
+                fontSize: "0.9rem",
+                color: "#003d3d",
+              }}
+            >
               Already a member?{" "}
               <a
                 href="/login"
-                style={{ color: "#14B8A6", textDecoration: "underline" }}
+                style={{
+                  color: "#14B8A6",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
               >
                 Login
               </a>
-            </Typography>
+            </div>
           </Box>
         </Paper>
       </div>

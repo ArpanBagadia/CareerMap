@@ -198,7 +198,7 @@ export default function Login() {
         <div className="navbar-content">
           <div className="navbar-brand">
             <img src={CompanyLogo} alt="Company Logo" className="navbar-logo" />
-            <span className="navbar-title">User Login</span>
+            <span className="navbar-title">CareerMap</span>
           </div>
         </div>
       </Disclosure>
@@ -263,8 +263,17 @@ export default function Login() {
             <Button
               onClick={handleSubmit}
               variant="contained"
-              className="form-button1"
-              style={{ backgroundColor: "#14B8A6" }}
+              sx={{
+                color: "white",
+                fontWeight: "bold",
+                padding: "0.75rem",
+                marginTop: "1rem",
+                borderRadius: "8px",
+                backgroundColor: "#14b8a6",
+                "&:hover": {
+                  backgroundColor: "#003d3d", // Darker teal on hover
+                },
+              }}
               fullWidth
             >
               Login

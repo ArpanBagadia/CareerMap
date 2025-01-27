@@ -41,8 +41,8 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 1rem;
-  margin-top: 60px; /* Offset for the navbar */
+  padding: 3rem;
+  margin-top: 60px;
 }
 
 .form-container {
@@ -64,24 +64,4 @@
 
 .form-header1 {
   color: #003d3d;
-}
-
-.form-button1 {
-  background-color: #14b8a6;
-  color: white;
-  font-weight: bold;
-  padding: 0.75rem;
-  margin-top: 1rem;
-  border-radius: 8px;
-}
-
-.form-button1:hover {
-  background-color: #003d3d;
-}
-
-.forgot-password1 {
-  margin-top: 0.75rem;
-  color: #003d3d;
-  font-size: 0.9rem;
-  text-align: center;
 }
